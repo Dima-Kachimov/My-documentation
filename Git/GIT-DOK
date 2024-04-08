@@ -1,0 +1,16 @@
+- git init - инициализация проекта
+
+- Настройка Git - локально
+git config --local user.name 'Dima'
+git config --local user.email 'Dima@gmail.com'
+
+- Настройка Git - глобально
+git config --local global.name 'Dima'
+git config --local global.email 'Dima@gmail.com'
+
+- Список команд
+git status - проверить статус git репозитория
+git add . - git начнет следить за всеми файлами (добавть файлы в индекс)
+git commit -m 'message' - сделать комит
+git log - посмотреть логи всех комитов
+git push - запушить в удаленный репозиторий
