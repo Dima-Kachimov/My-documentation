@@ -34,3 +34,6 @@
 
 // Таблица приоритетов
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+
+// 1 && 1 && 0 && 2  - вернет первое ложное значение или последнее истенное
+// 0 || 2 || 0 - вернет первое истенное значение или последнее ложное
