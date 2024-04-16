@@ -44,4 +44,4 @@ for (let key in options) {
 const {border, bg: background} = options.colors
 
 // Методы Object
-Object.keys(options) // - Получаем массив из свойств обьекта
+Object.keys(options) // - Получаем массив из свойств обьекта (Как вариант потом получить количество всех свойств)
