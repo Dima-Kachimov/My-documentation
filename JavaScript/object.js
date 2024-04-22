@@ -12,6 +12,7 @@ const options = {
     }
 };
 
+
 // Обращение к свойствам обьекта
 const test = 'colors'
 console.log(options.name) // test
@@ -19,8 +20,10 @@ console.log(options['width']) // 1024
 console.log(options[test]['bg']) // 'red
 options.makeTest() // 'Это метод этого обьекта'
 
+
 // Удаление свойства из обьекта
 delete options.name;
+
 
 // Перебор обьекта и его внутреннего обьекта как пример через for (let key in options) {}
 for (let key in options) {
@@ -33,15 +36,34 @@ for (let key in options) {
     }
 }
 
+
 // - Пример подсчета всех свойств обекта через переменную counter
 let counter = 0
 for (let key in options) {
     counter++
 }
 
+
 // Диструктуризация обекта
 // - name: rename - переименовать свойство
 const {border, bg: background} = options.colors
 
+
 // Методы Object
 Object.keys(options) // - Получаем массив из свойств обьекта (Как вариант потом получить количество всех свойств)
+
+
+// КОПИРОВАНИЕ ОБЬЕКТА ПРИМЕРЫ
+// 1) - Использовать функцию (Без глубокой копии 'Поверхностная копия')
+function copy (mainObj) {
+    let objCopy = {}
+    for (let key in mainObj) {
+        objCopy[key] = mainObj[key]
+    }
+    return objCopy
+}
+// 2) - Использовать Object.assign(куда? , откуда ?) (Без глубокой копии 'Поверхностная копия')
+// - Можно использовать для обьединения двух обьектов
+const newObj = Object.assign({}, options)
+// 3) - ES9 с использыванием SPREAD оператора
+const myObj = {...options}
