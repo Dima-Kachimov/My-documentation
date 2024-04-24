@@ -1,5 +1,8 @@
 // Методы строк
 
+// Link
+// Таблица символов Юникода -  https://symbl.cc/ru/unicode-table/#latin-1-supplement
+
 let string = 'string methods'
 
 // Свойства

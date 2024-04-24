@@ -67,3 +67,5 @@ function copy (mainObj) {
 const newObj = Object.assign({}, options)
 // 3) - ES9 с использыванием SPREAD оператора
 const myObj = {...options}
+// 4) Глубокое копирование объекта
+const copyJson = JSON.parse(JSON.stringify(options));
