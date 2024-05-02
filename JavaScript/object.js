@@ -25,6 +25,11 @@ options.makeTest() // 'Это метод этого обьекта'
 delete options.name;
 
 
+// Методы Object
+Object.keys(options) // - Получаем массив из свойств обьекта (Как вариант потом получить количество всех свойств)
+Object.values(options); // - Возврощает масив с значениями обьекта
+
+
 // Перебор обьекта и его внутреннего обьекта как пример через for (let key in options) {}
 for (let key in options) {
     if (typeof options[key] === 'object') {
@@ -48,9 +53,6 @@ for (let key in options) {
 // - name: rename - переименовать свойство
 const {border, bg: background} = options.colors
 
-
-// Методы Object
-Object.keys(options) // - Получаем массив из свойств обьекта (Как вариант потом получить количество всех свойств)
 
 
 // КОПИРОВАНИЕ ОБЬЕКТА ПРИМЕРЫ
