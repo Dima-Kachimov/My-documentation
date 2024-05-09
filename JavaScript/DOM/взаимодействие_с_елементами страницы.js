@@ -19,8 +19,13 @@ circles[0].style.cssText = 'background-color: red; border: 2px dashed blue';
 
 
 // Работа с классами
-//- Добавить класс
-div.classList.add('black');
+box.classList.length // - свойство паказывает сколько классов есть у данного обьекта
+box.classList.item(0) // - Получить клас под определенным индексом
+div.classList.add('black', 'test'); //- Добавить класс
+div.classList.remove('black') // - Удалить класс
+div.classList.toggle('black') // - Переключить класс (если нет то добавить если есть то удалить)
+box.classList.contains('black') // - Если класс есть ==> true если класса нет ==> false
+box.className // - Получить строку со всеми классами
 
 
 

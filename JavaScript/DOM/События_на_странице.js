@@ -10,6 +10,8 @@ const button = document.querySelector('button');
 
 
 
+
+
 // Мнтоды обьекта event
 // e.preventDefault() - сбрасивает стандартное поведение браузера
 // e.stopPropagation() - отменяет всплитие собития родителю
@@ -19,6 +21,7 @@ const button = document.querySelector('button');
 // e.touches - получить обьект TouchList с дфнными
 // e.targetTouches - получить данные только по том елементу где был клик
 // e.changedTouch - последний убранный палец
+
 
 
 
@@ -40,8 +43,10 @@ const button = document.querySelector('button');
  * touchcancel - точка прикосновения уже больше не орентируеться на поверхности
  */
 
-// ПРОСЛУШКА СОБЫТИЙ 3 СПОСОБА
 
+
+
+// ПРОСЛУШКА СОБЫТИЙ 3 СПОСОБА
 // 1) Первый способ прослушать собитие (Не используеться из за переприсваивания)
 box.onclick = (e) => {
     console.log(e);
@@ -56,8 +61,10 @@ button.addEventListener('mouseenter', (e) => {
 });
 
 
-// УДАЛЕНИЕ ОБРОБОТЧИКА СОБИТИЙ
 
+
+
+// УДАЛЕНИЕ ОБРОБОТЧИКА СОБИТИЙ
 // 1) callback функцию нужно вынести за пределы оброботчика
 const openEvent = (e) => {
     console.log(e);
@@ -71,3 +78,25 @@ heart.removeEventListener('mouseenter', openEvent);
 // 1 - название собития
 // 2 - callback функцию которая выполниться
 // 3 - Опции - настройки (Опционально)
+
+
+
+// ДЕЛЕГИРОВАНИЕ СОБИТИЙ
+// 1 - Нужно повесить оброботчик собития на родителя
+// 2 - Вызываем callback функцию по условию
+// - e.target && e.target.tagName === 'BUTTON' - по тегу
+// - e.target && e.target.classList.contains('black') - по классу
+// - e.target && e.target.matches('button.black') - по селектору
+
+const wrapperBtn = document.querySelector('.wrapper-btn');
+wrapperBtn.addEventListener('click', (e) => {
+    if (e.target && e.target.tagName === 'BUTTON') {
+        console.log('button');
+    }
+    if (e.target && e.target.classList.contains('black')) {
+        console.log('black');
+    }
+    if (e.target && e.target.matches('button.black')) {
+        console.log('black');
+    }
+});
