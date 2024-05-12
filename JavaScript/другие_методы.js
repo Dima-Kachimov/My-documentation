@@ -1,3 +1,3 @@
-const str = 12
+let str = 12
 
 isNaN(str) // - проверет на NaN
